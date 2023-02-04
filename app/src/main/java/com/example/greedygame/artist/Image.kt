@@ -1,6 +1,8 @@
 package com.example.greedygame.artist
 
+import com.google.gson.annotations.SerializedName
+
 data class Image(
-    val text: String,
+    @SerializedName("#text") val text: String,
     val size: String
 )

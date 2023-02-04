@@ -1,4 +1,4 @@
-package com.example.greedygame.ablum
+package com.example.greedygame.album
 
 data class Albums(
     val attr: Attr,

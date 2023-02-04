@@ -8,5 +8,5 @@ object MusicRepository {
     suspend fun  Topartist(tag:String)=RetrofitHelper.api.getArtist(tag)
     suspend fun  Topalbum(tag:String)=RetrofitHelper.api.getAlbums(tag)
     suspend fun  Toptrack(tag:String)=RetrofitHelper.api.getTrack(tag)
-
+    suspend fun  TagInfo(tag:String)=RetrofitHelper.api.getTagInfo(tag)
 }

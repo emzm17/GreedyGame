@@ -4,10 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.greedygame.ablum.Album
+import com.example.greedygame.album.Album
 import com.example.greedygame.artist.Artists
 import com.example.greedygame.tags.Toptags
 import com.example.greedygame.repository.MusicRepository
+import com.example.greedygame.taginfo.TagInfo
 import com.example.greedygame.track.Track
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -34,6 +35,9 @@ class MusicViewModel:ViewModel() {
     val tracklist:LiveData<Track>
     get() = trackLiveData
 
+    private val tagInfoLiveData=MutableLiveData<TagInfo>()
+    val tagInfolist:LiveData<TagInfo>
+    get() = tagInfoLiveData
 
 
 
@@ -75,6 +79,14 @@ class MusicViewModel:ViewModel() {
         }
     }
 
+    fun taginfo(tag: String){
+        viewModelScope.launch(Dispatchers.IO) {
+            val result = MusicRepository.TagInfo(tag)
+            if (result.isSuccessful) {
+                tagInfoLiveData.postValue(result.body())
+            }
+        }
+    }
 
 
 }

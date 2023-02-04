@@ -1,4 +1,4 @@
-package com.example.greedygame.ablum
+package com.example.greedygame.artistinfo
 
 data class Image(
     val text: String,
