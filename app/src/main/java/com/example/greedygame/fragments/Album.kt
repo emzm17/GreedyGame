@@ -8,13 +8,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.GridView
+import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.greedygame.DetailActivity
 import com.example.greedygame.Globalvalue.Companion.TAG
 import com.example.greedygame.R
 import com.example.greedygame.adapter.AlbumAdapter
 import com.example.greedygame.album.AlbumX
 import com.example.greedygame.album.Artist
+import com.example.greedygame.custom.DetailAA
 import com.example.greedygame.viewmodel.MusicViewModel
 import kotlinx.android.synthetic.main.fragment_album.*
 import kotlinx.android.synthetic.main.fragment_artist.*
@@ -49,6 +53,12 @@ class Album : Fragment() {
            }
 
          rcview.adapter=adapter
+        adapter.onItemClick={
+            val intent= Intent(activity, DetailActivity::class.java)
+            val detailaa=DetailAA(it.artist.name,it.name)
+            intent.putExtra("ALBUM",detailaa)
+            activity?.startActivity( intent)
+        }
     }
 
 

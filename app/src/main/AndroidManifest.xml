@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GreedyGame">
         <activity
+            android:name=".DetailArtistActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".GenreActivity"
             android:exported="false" />
         <activity

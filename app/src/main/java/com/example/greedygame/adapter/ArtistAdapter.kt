@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.music_item.view.*
 
 class ArtistAdapter(private var context: Context, private var list:ArrayList<ArtistX>):
     RecyclerView.Adapter<ArtistAdapter.ArtistViewHolder>() {
-
+    var onItemClick1:((ArtistX)->Unit)?=null
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -34,6 +34,9 @@ class ArtistAdapter(private var context: Context, private var list:ArrayList<Art
 
     override fun onBindViewHolder(holder:ArtistViewHolder, position: Int) {
         holder.bind(list[position])
+        holder.itemView.setOnClickListener {
+            onItemClick1?.invoke(list[position])
+        }
     }
 
     override fun getItemCount(): Int {

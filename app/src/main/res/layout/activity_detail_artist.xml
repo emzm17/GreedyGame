@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailActivity">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp">
+
+
+        <ImageView
+            android:id="@+id/detail_artist_pic"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_gravity="center"
+
+            android:scaleType="centerCrop"
+            android:layout_margin="5dp"
+            android:padding="4dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <!--on below line we are creating
+            a simple text view-->
+        <TextView
+            android:id="@+id/details_top_artist_nametv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="100dp"
+            android:text="Coldplay"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            tools:ignore="RtlCompat" />
+        <TextView
+            android:id="@+id/details_playcount_tv"
+            android:layout_width="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:layout_marginStart="40dp"
+            android:text="260K"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            tools:ignore="RtlCompat" />
+        <TextView
+            android:id="@+id/details_playcount_name"
+            android:layout_width="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="40dp"
+            android:text="Playcount"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            tools:ignore="RtlCompat" />
+        <TextView
+            android:id="@+id/details_listener_tv"
+            android:layout_width="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:layout_marginStart="260dp"
+            android:text="260k"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            tools:ignore="RtlCompat" />
+        <TextView
+            android:id="@+id/details_listener_name"
+            android:layout_width="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="260dp"
+            android:text="Listener"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            tools:ignore="RtlCompat" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/detail_tag_rcivew"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:text="Hello world"
+        android:textSize="15sp"
+        android:id="@+id/details_toptrack_descri"
+        android:textColor="@color/black"
+        android:layout_margin="10dp"
+        android:ellipsize="end"
+        android:maxLines="6"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="Top Tracks"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/detail_topalbum_rcivew"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="Top Albums"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/detail_toptrack_rcivew"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+
+</LinearLayout>

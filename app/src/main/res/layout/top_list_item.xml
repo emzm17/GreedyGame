@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".DetailActivity">
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="138dp"
+    android:layout_height="138dp"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp">
+
+    <ImageView
+        android:id="@+id/top_album_pic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher" />
+
+    <!--on below line we are creating
+        a simple text view-->
+    <TextView
+        android:id="@+id/top_album_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:text="Bad Blood"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        tools:ignore="RtlCompat" />
+    <TextView
+        android:id="@+id/top_artist_name"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Talyor Swift"
+        android:textSize="10sp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        tools:ignore="RtlCompat" />
+</com.google.android.material.card.MaterialCardView>
+</LinearLayout>

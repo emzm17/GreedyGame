@@ -12,15 +12,13 @@ import android.widget.BaseAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.greedygame.R
-import com.example.greedygame.album.Album
-import com.example.greedygame.album.AlbumX
-import com.example.greedygame.album.Artist
-import com.example.greedygame.artist.ArtistX
 import com.example.greedygame.track.TrackX
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.music_item.view.*
 class TrackAdapter(private var context: Context, private var list:ArrayList<TrackX>):
     RecyclerView.Adapter<TrackAdapter.TrackViewHolder>() {
+
+
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -32,6 +30,7 @@ class TrackAdapter(private var context: Context, private var list:ArrayList<Trac
 
     override fun onBindViewHolder(holder:TrackViewHolder, position: Int) {
         holder.bind(list[position])
+
     }
 
     override fun getItemCount(): Int {

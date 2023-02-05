@@ -11,4 +11,6 @@ object MusicRepository {
     suspend fun  AlbumInfo(artist:String,album:String)=RetrofitHelper.api.getAlbumInfo(artist,album)
     suspend fun ArtistInfo(artist: String)=RetrofitHelper.api.getArtistInfo(artist)
     suspend fun TagInfo(tag: String)=RetrofitHelper.api.getTaginfo(tag)
+    suspend fun Artisttoptrack(artist: String)=RetrofitHelper.api.gettopTrack(artist)
+    suspend fun Artisttopalbum(artist: String)=RetrofitHelper.api.gettopAlbum(artist)
 }

@@ -1,6 +1,7 @@
 package com.example.greedygame.fragments
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,11 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.greedygame.DetailActivity
 import com.example.greedygame.Globalvalue
 import com.example.greedygame.R
 import com.example.greedygame.adapter.AlbumAdapter
 import com.example.greedygame.adapter.TrackAdapter
 import com.example.greedygame.album.AlbumX
+import com.example.greedygame.custom.DetailAA
 import com.example.greedygame.track.TrackX
 import com.example.greedygame.viewmodel.MusicViewModel
 import kotlinx.android.synthetic.main.fragment_album.*
@@ -49,5 +52,6 @@ class Track : Fragment() {
         }
 
         rcview2.adapter=adapter
+
     }
 }

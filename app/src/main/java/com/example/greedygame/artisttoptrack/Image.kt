@@ -1,4 +1,4 @@
-package com.example.greedygame.artistinfo
+package com.example.greedygame.artisttoptrack
 
 import com.google.gson.annotations.SerializedName
 

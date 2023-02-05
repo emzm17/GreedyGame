@@ -14,12 +14,13 @@ import com.example.greedygame.album.Album
 import com.example.greedygame.album.AlbumX
 import com.example.greedygame.album.Artist
 import com.example.greedygame.artist.ArtistX
+import com.example.greedygame.track.TrackX
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.music_item.view.*
 
 class AlbumAdapter(private var context: Context, private var list:ArrayList<AlbumX>):
     RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>() {
-
+    var onItemClick:((AlbumX)->Unit)?=null
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -30,6 +31,9 @@ class AlbumAdapter(private var context: Context, private var list:ArrayList<Albu
 
     override fun onBindViewHolder(holder:AlbumViewHolder, position: Int) {
         holder.bind(list[position])
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(list[position])
+        }
     }
 
     override fun getItemCount(): Int {
