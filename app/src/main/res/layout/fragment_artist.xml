@@ -6,11 +6,10 @@
     tools:context=".fragments.Artist">
 
 
-    <GridView
-        android:id="@+id/gdview1"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcview1"
         android:layout_width="wrap_content"
         android:numColumns="auto_fit"
-        android:horizontalSpacing="10dp"
         android:columnWidth="150dp"
         android:layout_height="wrap_content"/>
 

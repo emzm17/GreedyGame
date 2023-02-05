@@ -2,6 +2,7 @@ package com.example.greedygame.api
 
 
 import com.example.greedygame.album.Album
+import com.example.greedygame.albuminfo.AlbumInfo
 import com.example.greedygame.artist.Artists
 import com.example.greedygame.artistinfo.ArtistInfo
 import com.example.greedygame.constants.Constants.Companion.API_KEY
@@ -27,12 +28,15 @@ interface RetrofitServices {
     @GET("?method=tag.gettoptracks&api_key=${API_KEY}&format=json&")
     suspend fun getTrack(@Query("tag")tag: String):Response<Track>
 
+    @GET("?method=tag.getinfo&api_key=${API_KEY}&format=json&")
+    suspend fun getTaginfo(@Query("tag")tag: String):Response<TagInfo>
+
     @GET("?method=artist.getinfo&api_key=${API_KEY}&format=json&")
     suspend fun getArtistInfo(@Query("artist")artist:String):Response<ArtistInfo>
 
 
-    @GET("?method=tag.getinfo&api_key=${API_KEY}&format=json&")
-    suspend fun getTagInfo(@Query("tag")tag: String):Response<TagInfo>
+    @GET("?method=album.getinfo&api_key=${API_KEY}&format=json&")
+    suspend fun getAlbumInfo(@Query("artist")artist: String,@Query("album")album: String):Response<AlbumInfo>
 
 
 

@@ -5,7 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.greedygame.album.Album
+import com.example.greedygame.albuminfo.AlbumInfo
 import com.example.greedygame.artist.Artists
+import com.example.greedygame.artistinfo.ArtistInfo
 import com.example.greedygame.tags.Toptags
 import com.example.greedygame.repository.MusicRepository
 import com.example.greedygame.taginfo.TagInfo
@@ -34,6 +36,14 @@ class MusicViewModel:ViewModel() {
     private val trackLiveData= MutableLiveData<Track>()
     val tracklist:LiveData<Track>
     get() = trackLiveData
+
+    private val albumInfoLiveData=MutableLiveData<AlbumInfo>()
+    val albumInfolist:LiveData<AlbumInfo>
+    get() = albumInfoLiveData
+
+    private val artistInfoLiveData=MutableLiveData<ArtistInfo>()
+    val artistInfolist:LiveData<ArtistInfo>
+    get() = artistInfoLiveData
 
     private val tagInfoLiveData=MutableLiveData<TagInfo>()
     val tagInfolist:LiveData<TagInfo>
@@ -79,13 +89,32 @@ class MusicViewModel:ViewModel() {
         }
     }
 
-    fun taginfo(tag: String){
+    fun albuminfo(artist: String,album:String){
         viewModelScope.launch(Dispatchers.IO) {
-            val result = MusicRepository.TagInfo(tag)
+            val result = MusicRepository.AlbumInfo(artist,album)
             if (result.isSuccessful) {
-                tagInfoLiveData.postValue(result.body())
+               albumInfoLiveData.postValue(result.body())
             }
         }
+    }
+
+
+    fun artistinfo(artist: String){
+        viewModelScope.launch(Dispatchers.IO) {
+            val result = MusicRepository.ArtistInfo(artist)
+            if (result.isSuccessful) {
+                artistInfoLiveData.postValue(result.body())
+            }
+        }
+    }
+
+    fun taginfo(tag:String){
+         viewModelScope.launch(Dispatchers.IO) {
+             val result=MusicRepository.TagInfo(tag)
+             if(result.isSuccessful){
+                  tagInfoLiveData.postValue(result.body())
+             }
+         }
     }
 
 

@@ -1,11 +1,13 @@
 package com.example.greedygame.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.greedygame.Globalvalue
 import com.example.greedygame.R
 import com.example.greedygame.adapter.AlbumAdapter
@@ -30,11 +32,14 @@ class Artist : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_artist, container, false)
     }
+    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         vm= ViewModelProvider(this)[MusicViewModel::class.java]
         vm.topArtist(Globalvalue.TAG!!)
         list= ArrayList()
         adapter= ArtistAdapter(requireContext(),list)
+        rcview1.setHasFixedSize(true)
+        rcview1.layoutManager=GridLayoutManager(requireContext(),2)
         vm.artistlist.observe(viewLifecycleOwner){
             it.topartists.artist.forEach { i->
                 list.add(i)
@@ -42,7 +47,7 @@ class Artist : Fragment() {
             adapter.notifyDataSetChanged()
         }
 
-        gdview1.adapter=adapter
+        rcview1.adapter=adapter
     }
 
 }
